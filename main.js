@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended:true}));
 
 app.use(cors());
 
-app.use('/', viewApi);
+app.use('/api/store/', viewApi);
 
 app.listen(3000,()=>{
     console.log('running');
