@@ -9,7 +9,7 @@ let products = [
     { id: 5, name: "Sony Headphones", category: "Accessories" }
 ];
 
-let contains = (arr,keywords) => arr.name.includes(keywords);
+const contains = (arr,keywords) => arr.name.includes(keywords);
 
 router.get('/',(req,res)=>{
     res.status(200).json(Arr);
