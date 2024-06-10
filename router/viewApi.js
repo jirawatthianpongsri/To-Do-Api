@@ -9,6 +9,8 @@ let products = [
     { id: 5, name: "Sony Headphones", category: "Accessories" }
 ];
 
+let contains = (arr,keywords) => arr.name.includes(keywords);
+
 router.get('/',(req,res)=>{
     res.status(200).json(Arr);
 });
@@ -23,8 +25,7 @@ router.post('/post/',(req,res,next)=>{
 
 router.get('/search/',(req,res,next)=>{
     let keywords = req.body.keywords;
-    let contains = (arr) => arr.name.includes(keywords);
-    let filteredContains = products.filter(contains);
+    let filteredContains = products.filter(contains(products,keywords));
     res.status(200).json(filteredContains);
 });
 
